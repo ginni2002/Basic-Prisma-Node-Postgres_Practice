@@ -1,0 +1,47 @@
+### GET /Home
+GET http://localhost:3000
+
+### POST /Signup
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username":"grsb2002",
+    "password":"test123"
+}
+
+### POST /Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username":"grsb2002",
+    "password":"test123"
+}
+
+### GET /Todos (protected)
+GET http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0NjkzMTMwLCJleHAiOjE3MzQ3Nzk1MzB9.nTRDUg3hqISoITztXSPNJkvo0dSI515e17HIkeQe-_0
+
+### POST /Todos (protected)
+POST http://localhost:3000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0NjkzMTMwLCJleHAiOjE3MzQ3Nzk1MzB9.nTRDUg3hqISoITztXSPNJkvo0dSI515e17HIkeQe-_0
+Content-Type: application/json
+
+{
+    "task":"Finish coding the projects"
+}
+
+### PUT /Todos (protected)
+PUT http://localhost:3000/todos/2?page=3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0NjkzMTMwLCJleHAiOjE3MzQ3Nzk1MzB9.nTRDUg3hqISoITztXSPNJkvo0dSI515e17HIkeQe-_0
+Content-Type: application/json
+
+{
+    "completed": 1
+}
+
+### DELETE /Todos (protected)
+DELETE  http://localhost:3000/todos/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM0NjkzMTMwLCJleHAiOjE3MzQ3Nzk1MzB9.nTRDUg3hqISoITztXSPNJkvo0dSI515e17HIkeQe-_0
+
